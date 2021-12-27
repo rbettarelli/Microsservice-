@@ -1,5 +1,6 @@
 package com.ricardo.coursemc;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
@@ -13,6 +14,7 @@ import com.ricardo.coursemc.domain.Cidade;
 import com.ricardo.coursemc.domain.Cliente;
 import com.ricardo.coursemc.domain.Endereco;
 import com.ricardo.coursemc.domain.Estado;
+import com.ricardo.coursemc.domain.ItemPedido;
 import com.ricardo.coursemc.domain.Pagamento;
 import com.ricardo.coursemc.domain.PagamentoComBoleto;
 import com.ricardo.coursemc.domain.PagamentoComCartao;
@@ -25,6 +27,7 @@ import com.ricardo.coursemc.repositories.CidadeRepository;
 import com.ricardo.coursemc.repositories.ClienteRepository;
 import com.ricardo.coursemc.repositories.EnderecoRespository;
 import com.ricardo.coursemc.repositories.EstadoRepository;
+import com.ricardo.coursemc.repositories.ItemPedidoRepository;
 import com.ricardo.coursemc.repositories.PagamentoRepository;
 import com.ricardo.coursemc.repositories.PedidoRepository;
 import com.ricardo.coursemc.repositories.ProdutoRepository;
@@ -55,6 +58,9 @@ public class CouserMcApplication implements CommandLineRunner {
 	
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
+	
+	@Autowired
+	private ItemPedidoRepository itemPedidoRepository;
 	
 	
 	public static void main(String[] args) {
@@ -122,6 +128,19 @@ public class CouserMcApplication implements CommandLineRunner {
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
 		
+		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
+		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
+		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
+		
+		ped1.getItens().addAll(Arrays.asList(ip1, ip2));
+		ped2.getItens().addAll(Arrays.asList(ip3));
+		
+		p1.getItens().addAll(Arrays.asList(ip1));
+		p2.getItens().addAll(Arrays.asList(ip3));
+		p3.getItens().addAll(Arrays.asList(ip2));
+		
+		
+		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
 
 }
