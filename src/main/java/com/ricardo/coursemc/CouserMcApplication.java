@@ -25,7 +25,7 @@ import com.ricardo.coursemc.domain.enums.TipoCliente;
 import com.ricardo.coursemc.repositories.CategoriaRepository;
 import com.ricardo.coursemc.repositories.CidadeRepository;
 import com.ricardo.coursemc.repositories.ClienteRepository;
-import com.ricardo.coursemc.repositories.EnderecoRespository;
+import com.ricardo.coursemc.repositories.EnderecoRepository;
 import com.ricardo.coursemc.repositories.EstadoRepository;
 import com.ricardo.coursemc.repositories.ItemPedidoRepository;
 import com.ricardo.coursemc.repositories.PagamentoRepository;
@@ -51,7 +51,7 @@ public class CouserMcApplication implements CommandLineRunner {
 	private ClienteRepository clienteRespository;
 	
 	@Autowired
-	private EnderecoRespository enderecoRespository;
+	private EnderecoRepository enderecoRespository;
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
