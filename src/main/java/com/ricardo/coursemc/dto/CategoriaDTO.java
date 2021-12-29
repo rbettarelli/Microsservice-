@@ -2,6 +2,7 @@ package com.ricardo.coursemc.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
@@ -16,7 +17,8 @@ public class CategoriaDTO implements Serializable {
 	@NotEmpty(message="Preenchimento obrigatório")
 	@Length(min=5, max=80, message="O tamanho deve ser entre 5 e 80 caracteres")
 	private String nome;
-	
+	@NotEmpty(message="O preenchimento é obrigatorio")
+	@Email(message="Email Inválido")
 	public CategoriaDTO () {
 		
 	}
