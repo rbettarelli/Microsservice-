@@ -21,7 +21,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<start-class>br.com.curso.mc.Application</start-class>
+		
 	</properties>
 
 
