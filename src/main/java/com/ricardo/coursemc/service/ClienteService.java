@@ -16,7 +16,6 @@ import com.ricardo.coursemc.domain.Endereco;
 import com.ricardo.coursemc.domain.enums.TipoCliente;
 import com.ricardo.coursemc.dto.ClienteDTO;
 import com.ricardo.coursemc.dto.ClienteNewDTO;
-import com.ricardo.coursemc.repositories.CidadeRepository;
 import com.ricardo.coursemc.repositories.ClienteRepository;
 import com.ricardo.coursemc.repositories.EnderecoRepository;
 import com.ricardo.coursemc.service.exception.DataIntegrityException;
