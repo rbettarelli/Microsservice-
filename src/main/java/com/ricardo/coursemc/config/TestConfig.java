@@ -14,25 +14,21 @@ import com.ricardo.coursemc.service.MockEmailService;
 @Configuration
 @Profile("test")
 public class TestConfig {
-	
+
 	@Autowired
 	private DBService dbService;
-	
-	
+
 	@Bean
-	
+
 	public boolean instantiateDatabase() throws ParseException {
 		dbService.intantiateDatabase();
 		return true;
-		
-		
-		
-			
-		}
-		
+
+	}
+
 	@Bean
 	public EmailService emailService() {
-		return new MockEmailService(); 
+		return new MockEmailService();
 	}
 
 }
